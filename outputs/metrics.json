@@ -1,0 +1,196 @@
+{
+  "data": {
+    "rows": 1345310,
+    "defaults": 268559,
+    "study_rows": 546018,
+    "strongest_field": "sub_grade_num",
+    "strongest_auc": 0.6673500788760416,
+    "splits": [
+      {
+        "split": "train",
+        "loans": 262992,
+        "defaults": 34693,
+        "default_rate": 0.1319165601995498,
+        "avg_rate": 12.80966234714364
+      },
+      {
+        "split": "validation",
+        "loans": 120790,
+        "defaults": 18269,
+        "default_rate": 0.15124596406987334,
+        "avg_rate": 11.507898087590032
+      },
+      {
+        "split": "test",
+        "loans": 162236,
+        "defaults": 23863,
+        "default_rate": 0.14708819250967725,
+        "avg_rate": 11.104260151877511
+      }
+    ]
+  },
+  "timing": {
+    "matured_rows": 44063,
+    "matured_auc": 0.6518366141788519,
+    "matured_value_m": 59.50835946,
+    "matured_mean_pd": 0.15452622573580546,
+    "uncalibrated_mean_pd": 0.13396762409230975
+  },
+  "model": {
+    "champion": "Gradient boosting",
+    "metrics": [
+      {
+        "model": "Lending Club sub-grade (benchmark)",
+        "val_auc": 0.6750360069428406,
+        "test_auc": 0.6814363095113916,
+        "test_ks": 0.2664862541933321,
+        "test_brier": NaN
+      },
+      {
+        "model": "Logistic regression",
+        "val_auc": 0.6678134117917355,
+        "test_auc": 0.6738354276906471,
+        "test_ks": 0.25145404229771945,
+        "test_brier": 0.11971936759037521
+      },
+      {
+        "model": "Gradient boosting",
+        "val_auc": 0.6751271521627067,
+        "test_auc": 0.6816510372810239,
+        "test_ks": 0.2617604837190271,
+        "test_brier": 0.11903685808972343
+      },
+      {
+        "model": "Gradient boosting, calibrated (champion)",
+        "val_auc": 0.6751271521627067,
+        "test_auc": 0.6816510372810239,
+        "test_ks": 0.2617604837190271,
+        "test_brier": 0.11882933227236439
+      },
+      {
+        "model": "Combined: application data plus rate and grade",
+        "val_auc": 0.6922742551619664,
+        "test_auc": 0.6998876881063286,
+        "test_ks": 0.28981641621851584,
+        "test_brier": 0.11774750110650048
+      }
+    ],
+    "train_auc": {
+      "Logistic regression": 0.6657378885111475,
+      "Gradient boosting": 0.702834700231216
+    },
+    "auc_with_rate": 0.6998876881063286,
+    "combined_gap": 0.018451378594937062,
+    "combined_lo": 0.016184449460716906,
+    "combined_hi": 0.020268346042209135,
+    "gap": 0.0002147277696323835,
+    "gap_lo": -0.002706459037319242,
+    "gap_hi": 0.0033845153437406152,
+    "psi": 0.0020043793465901977,
+    "cal_max_gap_pts": 1.2314000769412607
+  },
+  "strategy": {
+    "lgd": 0.6,
+    "interest_share": 0.75,
+    "cutoff": 0.22000000000000006,
+    "combined_cutoff": 0.24000000000000005,
+    "recommended": "Application score cutoff",
+    "policies": [
+      {
+        "policy": "Approve all",
+        "approval_rate": 100.0,
+        "default_rate": 14.708819250967725,
+        "avg_rate": 10.876260100555914,
+        "lent_m": 2079.832925,
+        "credit_loss_m": 178.281015,
+        "value_m": 50.803386689999996,
+        "return_pct": 2.4426667199722303,
+        "validation_value_m": 39.91418718,
+        "value_vs_all_m": 0.0,
+        "loss_vs_all_pct": 0.0
+      },
+      {
+        "policy": "Grade policy, same approval as score",
+        "approval_rate": 82.23328977538894,
+        "default_rate": 11.952448055647167,
+        "avg_rate": 9.679520462354589,
+        "lent_m": 1731.022075,
+        "credit_loss_m": 119.72211,
+        "value_m": 56.988929490000004,
+        "return_pct": 3.2922127518217814,
+        "validation_value_m": 43.537229700000005,
+        "value_vs_all_m": 6.1855428000000074,
+        "loss_vs_all_pct": -32.84640543470094
+      },
+      {
+        "policy": "Application score cutoff",
+        "approval_rate": 82.23328977538894,
+        "default_rate": 11.854255988966509,
+        "avg_rate": 10.135775944630955,
+        "lent_m": 1734.824975,
+        "credit_loss_m": 119.581365,
+        "value_m": 65.69387558999999,
+        "return_pct": 3.786772529603454,
+        "validation_value_m": 50.488114259999996,
+        "value_vs_all_m": 14.890488899999994,
+        "loss_vs_all_pct": -32.92535102517786
+      },
+      {
+        "policy": "Application score, expected value rule",
+        "approval_rate": 75.42715550186149,
+        "default_rate": 12.498161314047561,
+        "avg_rate": 10.565078803021791,
+        "lent_m": 1601.139425,
+        "credit_loss_m": 115.82265,
+        "value_m": 60.49542605999999,
+        "return_pct": 3.7782734667219873,
+        "validation_value_m": 47.00506878,
+        "value_vs_all_m": 9.692039369999996,
+        "loss_vs_all_pct": -35.03366020212528
+      },
+      {
+        "policy": "Combined score cutoff",
+        "approval_rate": 85.31891811928301,
+        "default_rate": 11.930529266424887,
+        "avg_rate": 10.01054892811898,
+        "lent_m": 1784.0273,
+        "credit_loss_m": 122.895045,
+        "value_m": 65.7582099,
+        "return_pct": 3.6859419079517446,
+        "validation_value_m": 49.998897510000006,
+        "value_vs_all_m": 14.95482321,
+        "loss_vs_all_pct": -31.06666741828904
+      },
+      {
+        "policy": "Combined score, expected value rule",
+        "approval_rate": 79.42256958998003,
+        "default_rate": 11.584608698351598,
+        "avg_rate": 10.061352505647319,
+        "lent_m": 1677.49965,
+        "credit_loss_m": 112.124355,
+        "value_m": 66.51434022,
+        "return_pct": 3.9650881727456695,
+        "validation_value_m": 49.84672713,
+        "value_vs_all_m": 15.710953529999998,
+        "loss_vs_all_pct": -37.10807906270895
+      }
+    ],
+    "score_minus_grade": [
+      8.70494610000001,
+      7.053362631750014,
+      10.349275886250002
+    ],
+    "rec_minus_all": [
+      14.890488900000006,
+      13.282649458500012,
+      16.446886339499994
+    ],
+    "best_counts": {
+      "combined_ev_m": 6,
+      "combined_m": 3
+    },
+    "fixed_score_wins": 11,
+    "fixed_combined_wins": 11,
+    "fixed_n": 12
+  }
+}
