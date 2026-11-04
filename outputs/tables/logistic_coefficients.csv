@@ -1,0 +1,33 @@
+feature,coefficient
+purpose: credit_card,-0.5334018422789183
+purpose: small_business,0.44060686151307493
+tot_cur_bal,0.40268528391623926
+purpose: debt_consolidation,-0.3630346957873993
+purpose: car,-0.35951200210060097
+tot_hi_cred_lim,-0.3342146716799839
+purpose: home_improvement,-0.27046693806703515
+purpose: major_purchase,-0.2611684855735275
+fico_avg,-0.2565766958296943
+avg_cur_bal,-0.24422545588680816
+loan_to_income,0.18173048289798774
+dti,0.1766334528830486
+bc_open_to_buy,-0.16279996544503297
+mths_since_recent_bc,-0.14541799354642768
+purpose: other,-0.13085259536769067
+mo_sin_rcnt_tl,-0.12109466463866042
+mths_since_recent_inq,-0.104654388496229
+purpose: vacation,-0.09420234249763232
+purpose: moving,0.09216975400745592
+purpose: house,-0.08963987057456736
+purpose: wedding,-0.08465523356550744
+inq_missing,-0.08214280511418322
+mo_sin_old_rev_tl_op,-0.07516814205840404
+mo_sin_rcnt_rev_tl_op,0.06822257750422137
+bc_util,-0.042126978572718514
+total_bc_limit,-0.04031815623568101
+purpose: medical,0.03858434338277402
+loan_amnt,0.03837270512428805
+annual_inc,-0.03447907950011161
+purpose: renewable_energy,-0.03257586741724424
+total_rev_hi_lim,-0.01271045383598819
+bal_missing,0.0
